@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://dul6jcbp5cwj1"]
+
+[ext_resource type="Texture2D" uid="uid://bck74qpbp0i2x" path="res://assets/screenshot.jpg" id="1_0wgl0"]
+[ext_resource type="PackedScene" uid="uid://bw5ubfprnq47k" path="res://hero.tscn" id="2_1ye2s"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_a640s"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_kdnb1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oqncp"]
+size = Vector2(14934.2, 11.8974)
+
+[node name="GamePlay" type="Node2D"]
+
+[node name="Screenshot" type="Sprite2D" parent="."]
+position = Vector2(5014, -451)
+scale = Vector2(8.49845, 8.22481)
+texture = ExtResource("1_0wgl0")
+
+[node name="Hero" parent="." instance=ExtResource("2_1ye2s")]
+position = Vector2(-41, -49)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+material = SubResource("CanvasItemMaterial_a640s")
+scale = Vector2(0.935452, 1.4065)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(-3555, 4799)
+physics_material_override = SubResource("PhysicsMaterial_kdnb1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(10464, 943.063)
+scale = Vector2(1.8659, -171.813)
+shape = SubResource("RectangleShape2D_oqncp")
